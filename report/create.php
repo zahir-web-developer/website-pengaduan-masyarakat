@@ -1,5 +1,11 @@
 <?php
+session_start();
 require_once '../service/database.php';
+
+if (!isset($_SESSION['id'])) {
+    header("Location: ../auth/login.php");
+    exit;
+}
 
 if (isset($_POST['submit'])) {
     session_start();

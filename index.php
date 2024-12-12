@@ -51,6 +51,9 @@ include './service/database.php';
                             <li class="nav-item">
                                 <a class="nav-link" href="./admin/index.php">Admin</a>
                             </li>
+                            <li>
+                                <h3 style="color: #fff; margin-left: 28rem;">Let's Report Anything!</h3>
+                            </li>
                         <?php } ?>
                     <?php } ?>
                 </ul>
@@ -63,14 +66,14 @@ include './service/database.php';
         </div>
         <div class="row">
             <div class="col-md-6 bg-dark text-light py-auto">
-                <h1 class="text-center my" style="font-family:'Plus Jakarta Sans';">Welcome <br><?= $_SESSION['email'] ?? '' ?> <br>in E-REPORT Website</h1>
+                <h1 class="text-center my" style="font-family:'Plus Jakarta Sans'; margin-top: 4rem;">Welcome <br><?= $_SESSION['email'] ?? '' ?> <br>in E-REPORT Website</h1>
             </div>
             <div class="col-md-6 bg-image text-white"
             style="background-image: url('image/annie-spratt-QckxruozjRg-unsplash.jpg'); height: 300px; background-size: cover; background-position: center;">
             </div>
         </div>
 
-        <div class="d-grid gap-2 col-6 mx-auto mt-4 w-100">
+        <div class="d-grid gap-2 col-6 mx-auto mt-4">
             <a class="btn btn-danger" href="./report/create.php">Make Report</a>
         </div>
     </div>

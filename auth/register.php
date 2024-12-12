@@ -1,4 +1,9 @@
 <?php
+session_start();
+if (isset($_SESSION['id'])) {
+    header("Location: ../index.php");
+    exit;
+}
 require_once '../service/database.php';
 
 if (isset($_POST['submit'])) {
@@ -65,6 +70,12 @@ if (isset($_POST['submit'])) {
         .card {
             margin-top: 100px;
         }
+        a{
+            display: block;
+            margin: 10px;
+            margin-left: 12.5rem;
+            text-decoration: none;
+        }
     </style>
 </head>
 
@@ -101,6 +112,9 @@ if (isset($_POST['submit'])) {
                                 <button type="submit" name="submit" class="btn btn-success">Register</button>
                             </div>
                         </form>
+                    </div>
+                    <div class="btn-login ">
+                        <a href="login.php">Go To Login if you have Account</a>
                     </div>
                 </div>
             </div>

@@ -1,5 +1,9 @@
 <?php
 session_start();
+if (!isset($_SESSION['id'])) {
+    header("Location: ../auth/login.php");
+    exit;
+}
 require_once '../service/database.php';
 
 $query = "SELECT * FROM report WHERE akun_id = " . $_SESSION['id'];

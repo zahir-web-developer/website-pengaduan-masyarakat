@@ -1,4 +1,9 @@
 <?php
+session_start();
+if (!isset($_SESSION['id'])) {
+    header("Location: ../auth/login.php");
+    exit;
+}
 require_once '../service/database.php';
 
 session_start();

@@ -1,4 +1,9 @@
 <?php
+session_start();
+if (isset($_SESSION['id'])) {
+    header("Location: ../index.php");
+    exit;
+}
 if (isset($_POST['login'])) {
     session_start();
     require_once '../service/database.php';
@@ -38,6 +43,14 @@ if (isset($_POST['login'])) {
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
 </style>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        a{
+            display: block;
+            margin: 10px;
+            margin-left: 11rem;
+            text-decoration: none;
+        }
+    </style>
 
     <title>Login</title>
 </head>
@@ -70,6 +83,9 @@ if (isset($_POST['login'])) {
                                 <button type="submit" name="login" class="btn btn-success">Login</button>
                             </div>
                         </form>
+                    </div>
+                    <div class="btn-login ">
+                        <a href="register.php">Make Your Account First</a>
                     </div>
                 </div>
             </div>
